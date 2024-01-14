@@ -1,4 +1,0 @@
-Understanding the build process of an embedded application for ARM-cortex-based MCUs:
-The build process goes by multiple steps, in my case I am not using any type of IDE, I figured out that it is better to know how everything works under the hood.
-Compilation Process:
-https://github.com/lotfibtr2/bare-metal-embedded-journey/assets/62564371/51f7bc1d-6e69-4a90-b6d5-045c60e044dc
