@@ -106,8 +106,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
   4 .ARM.attributes 0000002e  00000000  00000000  00000074  2**0
                   CONTENTS, READONLY
 ````
-This might look confusing at first but we are going to discuss it step by step. Before we deep dive into this we should know that in our projects we will have many files and not just one, while compiling, the last step is called linking which bring for example ````main.o```` and ````led.o```` and make so-called ````finaleExecutable.o````.
-The ````linker```` is used to merge all similar sections of different object files, that's what the previous section is about:
+Initially, the concept might seem perplexing, but we'll break it down step by step. In our projects, we typically deal with multiple files rather than just one. During the compilation process, the final step is known as linking. In this phase, the linker combines various object files—such as `main.o` and `led.o`—to create what we call the final executable, often denoted as `finaleExecutable.o`. The purpose of the linker is to amalgamate sections with similar characteristics from different object files.
+
+The previous section, where we explored sections within an object file using the `arm-none-eabi-objdump -h` command, provides insights into the organization of these sections. Understanding this linking process is crucial as it forms the bridge between individual components of our code, ultimately resulting in a coherent and functional executable.
 ````
 main.c --> main.o {.text, .data, .bss, rodata}-->
                                                                              -->{.text(.text(main.o), .text(led.o)}
@@ -116,7 +117,7 @@ main.c --> main.o {.text, .data, .bss, rodata}-->
 								             -->{.bss(.data(main.o), .bss(led.o)}		
 led.c -->led.o {.text, .data, .bss, rodata}----->
 ````
-We also have the so-called ````Locator```` which is a part of the linker and it is how you wish to merge different sections and assign adresses to different sections.
+We also have the so-called ````Locator```` which is a part of the linker and it is how you wish to merge different sections and assign addresses to different sections.
 
 
 
