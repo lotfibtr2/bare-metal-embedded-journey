@@ -119,6 +119,8 @@ led.c -->led.o {.text, .data, .bss, rodata}----->
 ````
 We also have the so-called ````Locator```` which is a part of the linker and it is how you wish to merge different sections and assign addresses to different sections.
 
+Now Before we go into how to write the linker from scratch we should know where different types of data are stored in our microcontroller:
+we have two types of memory, The ``FLASH`` memory also named ``ROM`` and the ``SRAM`` memory also named ``RAM``.
 
 
 
