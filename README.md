@@ -85,7 +85,7 @@ These are like the magic wand for STM32 microcontrollers. They help you flash yo
 4- git:
 This is your version control buddy. Git tracks changes, manages different versions of your code, and makes collaborating with others a breeze. While not directly involved in compiling, it's a lifesaver for keeping your project organized and collaborating with fellow developers.
 
-Since we are still at the beginning of the journey we know that having a solid knowledge of what is happening in the backend is vital to understand more complex and advanced topics that we are going to study along the journey, After compiling the source files we get the .o file,that we can see the sections in that file by throwing this command in the terminal:
+As we embark on our learning journey, it becomes evident that a robust understanding of the backend processes is crucial for comprehending more intricate and advanced topics to come. Following the compilation of source files, we obtain the ``.o`` file. To inspect the ``sections`` within this file, you can utilize the following command in the terminal:
 ````
 arm-none-eabi-objdump -h firmware.o
 ````
