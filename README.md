@@ -41,4 +41,14 @@ This repository is licensed under the [MIT License](LICENSE.md).
 
 ---
 
+## Progress 
+When working with microcontrollers, understanding the compilation process becomes crucial. In typical scenarios, developers use integrated development environments (IDEs) for C/C++ projects, often hosted on the same machine (PC) they are using. However, in real-world projects, especially those involving microcontrollers, cross-compilation is prevalent.
+
+Cross-compilation involves creating a project on one machine while the project is intended to run on a different architecture or platform. In the case of microcontrollers, the development might occur on a more powerful computer (host machine), while the target machine is the microcontroller with its specific architecture and constraints.
+
+This process ensures that the compiled code is compatible with the microcontroller's architecture and environment. The generated binary, rather than being executed on the development machine, is transferred to the microcontroller for execution. Cross-compilation is essential in embedded systems and microcontroller development to account for resource limitations and hardware variations.
+
+The Build Process for a project of this type passes by numerous steps that we are going to discuss:
+1- Firstly we need the toolchain to make this process succeed, in most cases, we are going to use ARM GNU TOOLCHAIN(https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
+
 Happy coding!
