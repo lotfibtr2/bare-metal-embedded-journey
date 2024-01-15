@@ -1,6 +1,16 @@
-#include<stdio.h>
-#define SIZE    (10U)
+#include<stdint.h>
 
-void test(void){}
+#define GPIO    (*(gpio*)(0x4002 0000UL))
 
-int main(void){return 0;}
+
+struct gpio
+{
+    volatile uint32_t MODER,OTYPER,OSPEEDR,PUPDR,IDR,ODR,BSRR,LCKR,AFRL[2];
+
+};
+
+void main ()
+{
+     // infinite loop 
+    
+}
