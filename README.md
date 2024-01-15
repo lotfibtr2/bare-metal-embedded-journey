@@ -71,6 +71,13 @@ firmware.o:main.c
 ````
 And now I will show you the use of it.
 Without Makefile we would compile our code like this:
+````
+$arm-none-eabi-gcc -mcpu=cortex-m4 -std=gnu11 -mthumb -O0 -c main.c -o firmware.o
+````
+And now after having the Makefile separately:
+````
+$make
+````
 
 3- stlink-tools:
 These are like the magic wand for STM32 microcontrollers. They help you flash your compiled binary onto the microcontroller's memory and assist in debugging. Essential tools for making your code work on the actual hardware.
