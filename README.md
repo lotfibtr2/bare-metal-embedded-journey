@@ -85,9 +85,28 @@ These are like the magic wand for STM32 microcontrollers. They help you flash yo
 4- git:
 This is your version control buddy. Git tracks changes, manages different versions of your code, and makes collaborating with others a breeze. While not directly involved in compiling, it's a lifesaver for keeping your project organized and collaborating with fellow developers.
 
+Since we are still at the beginning of the journey we know that having a solid knowledge of what is happening in the backend is vital to understand more complex and advanced topics that we are going to study along the journey, After compiling the source files we get the .o file,that we can see the sections in that file by throwing this command in the terminal:
+````
+arm-none-eabi-objdump -h firmware.o
+````
+We are going to see: 
+````
+firmware.o:     file format elf32-littlearm
 
-
-
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000000c  00000000  00000000  00000034  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000040  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000040  2**0
+                  ALLOC
+  3 .comment      00000034  00000000  00000000  00000040  2**0
+                  CONTENTS, READONLY
+  4 .ARM.attributes 0000002e  00000000  00000000  00000074  2**0
+                  CONTENTS, READONLY
+````
+This might look confusing at first but we are going to discuss it step by step.
 
 
 Happy coding!
