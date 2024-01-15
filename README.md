@@ -106,7 +106,8 @@ Idx Name          Size      VMA       LMA       File off  Algn
   4 .ARM.attributes 0000002e  00000000  00000000  00000074  2**0
                   CONTENTS, READONLY
 ````
-This might look confusing at first but we are going to discuss it step by step.
+This might look confusing at first but we are going to discuss it step by step. Before we deep dive into this we should know that in our projects we will have many files and not just one, while compiling  the last step is called linking which basically bring for example ````main.o````and````led.o```` and make so called ````finaleExecutable.o````
+
 
 
 Happy coding!
