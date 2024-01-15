@@ -1,7 +1,7 @@
 # Bare Metal Embedded Systems Programming Journey
 
 ## Introduction
-Welcome to my repository documenting my journey in bare metal embedded systems programming. I am [Your Name], a passionate learner eager to explore the intricacies of low-level programming for embedded systems.
+Welcome to my repository documenting my journey in bare metal embedded systems programming. I am Lotfi Bouteraa, a passionate learner eager to explore the intricacies of low-level programming for embedded systems.
 
 ## Learning Goals
 My primary goals in this journey include:
