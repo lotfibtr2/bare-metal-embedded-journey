@@ -106,7 +106,18 @@ Idx Name          Size      VMA       LMA       File off  Algn
   4 .ARM.attributes 0000002e  00000000  00000000  00000074  2**0
                   CONTENTS, READONLY
 ````
-This might look confusing at first but we are going to discuss it step by step. Before we deep dive into this we should know that in our projects we will have many files and not just one, while compiling  the last step is called linking which basically bring for example ````main.o````and````led.o```` and make so called ````finaleExecutable.o````
+This might look confusing at first but we are going to discuss it step by step. Before we deep dive into this we should know that in our projects we will have many files and not just one, while compiling, the last step is called linking which bring for example ````main.o```` and ````led.o```` and make so-called ````finaleExecutable.o````.
+The ````linker```` is used to merge all similar sections of different object files, that's what the previous section is about:
+````
+main.c --> main.o {.text, .data, .bss, rodata}-->
+                                                                             -->{.text(.text(main.o), .text(led.o)}
+	 					         finalExecutable.elf -->{.data(.data(main.o), .data(led.o)}
+			 						     -->{.bss(.data(main.o), .bss(led.o)}
+								             -->{.bss(.data(main.o), .bss(led.o)}		
+led.c -->led.o {.text, .data, .bss, rodata}----->
+````
+We also have the so-called ````Locator```` which is a part of the linker and it is how you wish to merge different sections and assign adresses to different sections.
+
 
 
 
