@@ -48,7 +48,26 @@ Cross-compilation involves creating a project on one machine while the project i
 
 This process ensures that the compiled code is compatible with the microcontroller's architecture and environment. The generated binary, rather than being executed on the development machine, is transferred to the microcontroller for execution. Cross-compilation is essential in embedded systems and microcontroller development to account for resource limitations and hardware variations.
 
-The Build Process for a project of this type passes by numerous steps that we are going to discuss:
-1- Firstly we need the toolchain to make this process succeed, in most cases, we are going to use ARM GNU TOOLCHAIN(https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
+So, the first thing you need to get your hands on is the ARM GNU Toolchain. You can grab it from ARM's official website. Depending on your operating system, you download and install it. In my case, since I'm using the Windows Subsystem for Linux (Ubuntu), I just run these commands in my terminal:
+```
+sudo apt -y update
+sudo apt -y install gcc-arm-none-eabi make stlink-tools git
+````
+Now, let's talk about each of these tools:
+
+1- gcc-arm-none-eabi:
+This is your go-to tool for turning your source files, essentially everything in your project folder and its dependencies, into object files. It's your compiler in the ARM GNU Toolchain.
+
+2- make:
+Think of Make as your assistant that takes care of the build process. It automates the compilation and linking tasks, making sure only the necessary components get recompiled when you make changes.
+
+3- stlink-tools:
+These are like the magic wand for STM32 microcontrollers. They help you flash your compiled binary onto the microcontroller's memory and assist in debugging. Essential tools for making your code work on the actual hardware.
+
+4- git:
+This is your version control buddy. Git tracks changes, manages different versions of your code, and makes collaborating with others a breeze. While not directly involved in compiling, it's a lifesaver for keeping your project organized and collaborating with fellow developers.
+
+
+
 
 Happy coding!
