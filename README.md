@@ -60,13 +60,23 @@ This is your go-to tool for turning your source files, essentially everything in
 ![Figure-2-1-1024x524](https://github.com/lotfibtr2/bare-metal-embedded-journey/assets/62564371/5ff42075-619c-4a3b-aec3-64ffbc30896a)
 
 2- make:
-Think of Make as your assistant that takes care of the build process. It automates the compilation and linking tasks, making sure only the necessary components get recompiled when you make changes.
+Consider Make as your reliable assistant, diligently managing the entire build process. It automates the compilation and linking tasks, ensuring that only the essential components are recompiled when you make changes to your code. Inside the Learnings/code folder, you'll find a straightforward and very basic Makefile example. It's worth noting that the Makefile may vary from project to project, adapting itself continuously to the specific needs and structure of each coding endeavor.
+````
+CC=arm-none-eabi-gcc 
+MACH=cortex-m4
+CFLAGS = -c -mcpu=$(MACH) -std=gnu11 -mthumb -O0
+
+firmware.o:main.c
+	$(CC) $(CFLAGS) main.c -o firmware.o
+````
 
 3- stlink-tools:
 These are like the magic wand for STM32 microcontrollers. They help you flash your compiled binary onto the microcontroller's memory and assist in debugging. Essential tools for making your code work on the actual hardware.
 
 4- git:
 This is your version control buddy. Git tracks changes, manages different versions of your code, and makes collaborating with others a breeze. While not directly involved in compiling, it's a lifesaver for keeping your project organized and collaborating with fellow developers.
+
+
 
 
 
