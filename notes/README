@@ -1,1 +1,2 @@
-
+Understanding the build process of an embedded application for ARM-cortex based MCUs:
+The build Process goes by multiple steps, in my case I am not using any type of IDE, I figured out that it is better to know how everything works under the hood.
