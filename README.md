@@ -123,7 +123,7 @@ Now Before we go into how to write the linker from scratch we should know where 
 we have two types of memory, The ``FLASH`` memory also named ``ROM`` and the ``SRAM`` memory also named ``RAM``.
 ![mem](https://github.com/lotfibtr2/bare-metal-embedded-journey/assets/62564371/9bd72c56-0b94-428e-8c54-306e8e1521d1).
 
-
+To be continued.
 
 
 
