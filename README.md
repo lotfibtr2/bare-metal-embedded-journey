@@ -57,7 +57,8 @@ Now, let's talk about each of these tools:
 
 1- gcc-arm-none-eabi:
 This is your go-to tool for turning your source files, essentially everything in your project folder and its dependencies, into object files. It's your compiler in the ARM GNU Toolchain.
-![Figure-2-1-1024x524](https://github.com/lotfibtr2/bare-metal-embedded-journey/assets/62564371/5ff42075-619c-4a3b-aec3-64ffbc30896a)
+![image](https://github.com/lotfibtr2/bare-metal-embedded-journey/assets/62564371/56dfc1b4-ed3b-417d-b5a0-1b364a0c80d7)
+
 
 2- make:
 Consider Make as your reliable assistant, diligently managing the entire build process. It automates the compilation and linking tasks, ensuring that only the essential components are recompiled when you make changes to your code. Inside the Learnings/code folder, you'll find a straightforward and very basic Makefile example. It's worth noting that the Makefile may vary from project to project, adapting itself continuously to the specific needs and structure of each coding endeavor.
@@ -85,7 +86,7 @@ These are like the magic wand for STM32 microcontrollers. They help you flash yo
 4- git:
 This is your version control buddy. Git tracks changes, manages different versions of your code, and makes collaborating with others a breeze. While not directly involved in compiling, it's a lifesaver for keeping your project organized and collaborating with fellow developers.
 
-Since we are still at the beginning of the journey we know that having a solid knowledge of what is happening in the backend is vital to understand more complex and advanced topics that we are going to study along the journey, After compiling the source files we get the .o file,that we can see the sections in that file by throwing this command in the terminal:
+As we embark on our learning journey, it becomes evident that a robust understanding of the backend processes is crucial for comprehending more intricate and advanced topics to come. Following the compilation of source files, we obtain the ``.o`` file. To inspect the ``sections`` within this file, you can utilize the following command in the terminal:
 ````
 arm-none-eabi-objdump -h firmware.o
 ````
@@ -106,7 +107,26 @@ Idx Name          Size      VMA       LMA       File off  Algn
   4 .ARM.attributes 0000002e  00000000  00000000  00000074  2**0
                   CONTENTS, READONLY
 ````
-This might look confusing at first but we are going to discuss it step by step.
+Initially, the concept might seem perplexing, but we'll break it down step by step. In our projects, we typically deal with multiple files rather than just one. During the compilation process, the final step is known as linking. In this phase, the linker combines various object files—such as `main.o` and `led.o`—to create what we call the final executable, often denoted as `finaleExecutable.o`. The purpose of the linker is to amalgamate sections with similar characteristics from different object files.
+
+The previous section, where we explored sections within an object file using the `arm-none-eabi-objdump -h` command, provides insights into the organization of these sections. Understanding this linking process is crucial as it forms the bridge between individual components of our code, ultimately resulting in a coherent and functional executable.
+````
+main.c --> main.o {.text, .data, .bss, rodata}-->
+                                                                             -->{.text(.text(main.o), .text(led.o)}
+	 					         finalExecutable.elf -->{.data(.data(main.o), .data(led.o)}
+			 						     -->{.bss(.data(main.o), .bss(led.o)}
+								             -->{.bss(.data(main.o), .bss(led.o)}		
+led.c -->led.o {.text, .data, .bss, rodata}----->
+````
+We also have the so-called ````Locator```` which is a part of the linker and it is how you wish to merge different sections and assign addresses to different sections.
+
+Now Before we go into how to write the linker from scratch we should know where different types of data are stored in our microcontroller:
+we have two types of memory, The ``FLASH`` memory also named ``ROM`` and the ``SRAM`` memory also named ``RAM``.
+![mem](https://github.com/lotfibtr2/bare-metal-embedded-journey/assets/62564371/9bd72c56-0b94-428e-8c54-306e8e1521d1).
+
+To be continued.
+
+
 
 
 Happy coding!
