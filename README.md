@@ -57,7 +57,8 @@ Now, let's talk about each of these tools:
 
 1- gcc-arm-none-eabi:
 This is your go-to tool for turning your source files, essentially everything in your project folder and its dependencies, into object files. It's your compiler in the ARM GNU Toolchain.
-![Figure-2-1-1024x524](https://github.com/lotfibtr2/bare-metal-embedded-journey/assets/62564371/5ff42075-619c-4a3b-aec3-64ffbc30896a)
+![image](https://github.com/lotfibtr2/bare-metal-embedded-journey/assets/62564371/56dfc1b4-ed3b-417d-b5a0-1b364a0c80d7)
+
 
 2- make:
 Consider Make as your reliable assistant, diligently managing the entire build process. It automates the compilation and linking tasks, ensuring that only the essential components are recompiled when you make changes to your code. Inside the Learnings/code folder, you'll find a straightforward and very basic Makefile example. It's worth noting that the Makefile may vary from project to project, adapting itself continuously to the specific needs and structure of each coding endeavor.
